@@ -33,7 +33,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <LetterDice dice={this.state.dice} setDieResult={this.setDieResult}></LetterDice>
-        <RollResults results={this.state.results}></RollResults>
+        <RollResults results={this.state.results} howManyDice={this.state.dice.length}></RollResults>
       </div>
     );
   }

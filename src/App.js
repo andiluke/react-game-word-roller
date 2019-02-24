@@ -23,10 +23,8 @@ class App extends Component {
   setDieResult = (index, result) => {
     console.log('setDieResult: ' + result);
     this.setState((prevState, props) => {
-      let updated = prevState.results;
-      updated[index] = result;
-      console.log('updated: ' + updated);
-      return {results: updated};
+      prevState.results[index] = result;
+      return {results: prevState.results};
     });
   };
 

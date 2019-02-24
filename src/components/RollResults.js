@@ -4,7 +4,7 @@ class RollResults extends Component {
     render() {
       return (
         <div>
-          Roll Results: {this.props.results}
+          Roll Results: {this.props.results.toString()}
         </div>
       );
     }

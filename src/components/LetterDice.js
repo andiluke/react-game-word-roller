@@ -7,6 +7,7 @@ import LetterDie from './LetterDie.js';
         <LetterDie 
             letters={die} 
             key={index}
+            counter={index}
             setDieResult={props.setDieResult} />
         ))}
     </div>

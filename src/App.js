@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import LetterDice from './components/LetterDice.js'
-
-
-
-
-class RollResults extends Component {
-  render() {
-    return (
-      <div>
-        Roll Results: {this.props.results}
-      </div>
-    );
-  }
-}
+import LetterDice from './components/LetterDice.js';
+import RollResults from './components/RollResults.js';
+import Header from './components/Header.js';
 
 class App extends Component {
   
@@ -28,27 +17,25 @@ class App extends Component {
       ],
       results: []
     };
+    this.setDieResult = this.setDieResult.bind(this);
   }
 
-  setDieResult = (result) => {
+  setDieResult = (index, result) => {
     console.log('setDieResult: ' + result);
-    this.setState((state, props) => {
-      return {results: [...state.results, result]};
+    this.setState((prevState, props) => {
+      let updated = prevState.results;
+      updated[index] = result;
+      console.log('updated: ' + updated);
+      return {results: updated};
     });
   };
 
   render() {
     return (
       <div className="App">
-        <header className="App-header" onClick={this.rollDie}>
-          
-          Aloha!
-         
-        </header>
+        <Header />
         <LetterDice dice={this.state.dice} setDieResult={this.setDieResult}></LetterDice>
         <RollResults results={this.state.results}></RollResults>
-
-
       </div>
     );
   }

@@ -12,6 +12,7 @@ class LetterDie extends Component {
       roll = () => {
         let choice = Math.floor(Math.random() * Math.floor(this.props.letters.length));
         let l = this.props.letters[choice];
+        
         console.log('chosen: ' + choice + '\n'
           + 'letter: ' + l
         );
@@ -20,7 +21,7 @@ class LetterDie extends Component {
           return {letter: l};
         });
        
-        this.props.setDieResult(l);
+        this.props.setDieResult(this.props.counter, l);
       }
     
       render() {

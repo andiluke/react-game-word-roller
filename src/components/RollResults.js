@@ -5,7 +5,13 @@ class ShowResults extends Component {
         return (
             <div className="roll_results">
                 <div className="roll_results_header">Is it a word?</div>
-                <div className="result_maybe_word">Is {this.props.results.join('')} a word? </div>
+                <div className="result_maybe_word">{this.props.results.join('')}</div>
+                <div className="result_maybe_word_images">
+                {this.props.results.map((letter) => (
+                    <img src="images/letters/{letter}.png" alt="{letter}" />
+                ))}
+                </div>
+                <img src="images/letters/a.png"/>
             </div>
         );
     }

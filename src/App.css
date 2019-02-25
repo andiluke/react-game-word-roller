@@ -1,17 +1,56 @@
 .App {
   text-align: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.app_header {
+  font-size: 3rem;
+  font-weigth: bold;
+  color: white;
+  border-bottom: 5px solid white;
+  padding-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .letter_dice_wrap {
-  outline: 2px solid green;
   display: flex;
   margin: 0 auto;
   justify-content: center;
 }
 
 .letter_die {
-  outline: 2px solid orange;
+  background-color: white;
+  font-size: 3rem;
   height: 100px;
   width: 100px;
-  margin: 0 1em;
+  margin: 0 10px;
+  line-height: 1em;
+  padding-top: .5em;
+}
+
+.letter_die_initial {
+  font-size: 2rem;
+}
+
+.no_results_yet {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.roll_results_header {
+  font-size: 1.5rem;
+  margin: 1em 0;
+}
+
+.result_maybe_word_images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.result_maybe_word_images img {
+  max-width: 150px;
+  height: auto;
 }

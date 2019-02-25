@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = () => (
-    <header className="App-header">
+    <header className="app_header">
         Rolling for Words
     </header>
 );

@@ -5,7 +5,6 @@ class ShowResults extends Component {
         return (
             <div className="roll_results">
                 <div className="roll_results_header">Is it a word?</div>
-                <div className="result_maybe_word">{this.props.results.join('')}</div>
                 <div className="result_maybe_word_images">
                 {this.props.results.map((letter, index) => (
                     <img src={'images/letters/' + letter + '.png'} alt={letter} key={index} />
@@ -17,11 +16,17 @@ class ShowResults extends Component {
 }
 
 
+const KeepRolling = () => (
+    <div className="no_results_yet">
+    Keep on Rolling!
+    </div>
+);
+
 class RollResults extends Component {
     render() {
       return (
         <div className="roll_results_wrap">
-        {this.props.results.length === this.props.howManyDice ? <ShowResults results={this.props.results} /> : 'Keep on Rolling!'}    
+        {this.props.results.length === this.props.howManyDice ? <ShowResults results={this.props.results} /> : <KeepRolling />}    
         </div>
       );
     }

@@ -13,10 +13,6 @@ class LetterDie extends Component {
         let choice = Math.floor(Math.random() * Math.floor(this.props.letters.length));
         let l = this.props.letters[choice];
         
-        console.log('chosen: ' + choice + '\n'
-          + 'letter: ' + l
-        );
-        
         this.setState((state, props) => {
           return {letter: l};
         });
@@ -27,7 +23,8 @@ class LetterDie extends Component {
       render() {
         return (
           <div 
-            className="letter_die"
+            className={!this.state.letter ? "letter_die letter_die_initial" : "letter_die"}
+
             onClick={this.roll}
           >
             {this.state.letter ? this.state.letter : 'Roll Me!'}

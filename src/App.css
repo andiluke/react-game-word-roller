@@ -33,6 +33,7 @@
 
 .letter_die_initial {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .no_results_yet {

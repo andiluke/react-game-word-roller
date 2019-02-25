@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <LetterDice dice={this.state.dice} setDieResult={this.setDieResult}></LetterDice>
+        <LetterDice dice={this.state.dice} setDieResult={this.setDieResult} results={this.state.results}></LetterDice>
         <RollResults results={this.state.results} howManyDice={this.state.dice.length}></RollResults>
       </div>
     );

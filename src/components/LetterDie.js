@@ -1,37 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class LetterDie extends Component {
-    
-      constructor(props) {
-        super(props);
-        this.state = {
-          letter: undefined
-        };
-      }
-    
-      roll = () => {
-        let choice = Math.floor(Math.random() * Math.floor(this.props.letters.length));
-        let l = this.props.letters[choice];
-        
-        this.setState((state, props) => {
-          return {letter: l};
-        });
-       
-        this.props.setDieResult(this.props.counter, l);
-      }
-    
-      render() {
-        return (
-          <div 
-            className={!this.state.letter ? "letter_die letter_die_initial" : "letter_die"}
+const LetterDie = (props) => {
+  
+  const roll = () => {
+    let choice = Math.floor(Math.random() * Math.floor(props.letters.length));
+    let l = props.letters[choice];
+    props.setDieResult(props.counter, l);
+  }
 
-            onClick={this.roll}
-          >
-            {this.state.letter ? this.state.letter : 'Roll Me!'}
-            
-          </div>
-        );
-      }
-    }
+
+  return (
+    <div 
+      className={!props.currentRoll ? "letter_die letter_die_initial" : "letter_die"}
+      onClick={roll}
+    >
+      {props.currentRoll ? props.currentRoll : 'Roll Me'}
+      
+    </div>
+  );
+
+}
 
   export default LetterDie;

@@ -8,7 +8,8 @@ import LetterDie from './LetterDie.js';
             letters={die} 
             key={index}
             counter={index}
-            setDieResult={props.setDieResult} />
+            setDieResult={props.setDieResult} 
+            currentRoll={props.results[index] ? props.results[index] : undefined} />
         ))}
     </div>
   );

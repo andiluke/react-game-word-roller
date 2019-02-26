@@ -65,6 +65,7 @@
   outline: 0;
   border: 0;
   margin-left: 1em;
+  cursor: pointer;
 }
 
 .roll_result_button:first-of-type {

@@ -6,9 +6,6 @@ import RollResults from './components/RollResults.js';
 import Header from './components/Header.js';
 import Welcome from './components/Welcome.js';
 
-import Dictionary from './lib/Dictionary';
-
-
 class App extends Component {
   
   constructor(props) {
@@ -28,7 +25,7 @@ class App extends Component {
   }
 
   setDieResult = (index, result) => {
-    console.log('setDieResult: ' + result);
+    //console.log('setDieResult: ' + result);
     this.setState((prevState, props) => {
       prevState.results[index] = result;
       return {results: prevState.results};
@@ -36,9 +33,7 @@ class App extends Component {
   };
 
   setUserName = (username) => {
-    console.log('setUserName: ', username);
-    const d = new Dictionary();
-    console.log(d.isWord(username));
+    //console.log('setUserName: ', username);
     this.setState(() => {
       return {username};
     });

@@ -9,7 +9,7 @@ import React from 'react';
     const EnterName = (props) => (
         <div className="welcome">
             <h2>Hello! What is your name?</h2>
-            <input id="welcome_username" data-lpignore="true" class="input_name"/> <button onClick={handleBtnClick} class="name_btn">Go</button>
+            <input id="welcome_username" data-lpignore="true" className="input_name"/> <button onClick={handleBtnClick} className="name_btn">Go</button>
         </div>
     );
 

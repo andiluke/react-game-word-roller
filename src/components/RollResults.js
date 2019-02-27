@@ -26,6 +26,8 @@ const KeepRolling = () => (
     </div>
 );
 
+const dictionary = [];
+
 class RollResults extends Component {
     render() {
       return (

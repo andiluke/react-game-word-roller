@@ -17,7 +17,8 @@ class App extends Component {
         ['t', 'b', 'd', 'w', 'm', 'n', 'p']
       ],
       results: [],
-      username: undefined
+      username: undefined,
+      score: 0
     };
     this.setDieResult = this.setDieResult.bind(this);
     this.setUserName = this.setUserName.bind(this);
@@ -42,7 +43,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Welcome setUserName={this.setUserName} username={this.state.username} />
+        <Welcome setUserName={this.setUserName} username={this.state.username} score={this.state.score}/>
         {this.state.username && <LetterDice dice={this.state.dice} setDieResult={this.setDieResult} results={this.state.results}></LetterDice>}
         {this.state.username && <RollResults results={this.state.results} howManyDice={this.state.dice.length}></RollResults>} 
       </div>

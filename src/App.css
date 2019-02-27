@@ -6,11 +6,12 @@
 }
 
 .app_header {
-  font-size: 3rem;
-  font-weigth: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
   color: white;
-  border-bottom: 5px solid white;
-  padding-bottom: 1rem;
+  border-bottom: 3px solid white;
+  padding-bottom: .5rem;
   margin: 1rem 0;
 }
 
@@ -70,4 +71,29 @@
 
 .roll_result_button:first-of-type {
   margin-left: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.input_name {
+  padding: 2rem 5rem 2rem 2rem;
+  font-size: 2.5rem;
+}
+
+.name_btn {
+  background-color: #DF18CE;
+  padding: 2rem;
+  font-size: 2.5rem;
+  color: white;
+  margin-left: -2rem;
+}
+
+.display_info_wrap {
+  font-size: 1.5rem;
+  margin: 1em;
+  padding: 1em;
+  background-color: #DF18CE;
+  color: white;
 }

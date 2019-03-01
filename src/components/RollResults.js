@@ -13,7 +13,12 @@ class RollResults extends Component {
     render() {
       return (
         <div className="roll_results_wrap">
-        {this.props.results.length === this.props.howManyDice ? <ShowResults results={this.props.results} changeScore={this.props.changeScore} /> : <KeepRolling />}    
+        {this.props.results.length === this.props.howManyDice ? 
+            <ShowResults 
+                results={this.props.results} 
+                changeScore={this.props.changeScore} 
+                clearDiceRoll={this.props.clearDiceRoll}
+            /> : <KeepRolling />}    
         </div>
       );
     }

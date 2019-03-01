@@ -33,6 +33,12 @@ class App extends Component {
     });
   };
 
+  clearDiceRoll = () => {
+    this.setState((prevState) => {
+      return { results: []};
+    });
+  };
+
   setUserName = (username) => {
     //console.log('setUserName: ', username);
     this.setState(() => {
@@ -59,6 +65,7 @@ class App extends Component {
                                   results={this.state.results} 
                                   howManyDice={this.state.dice.length}
                                   changeScore={this.changeScore}
+                                  clearDiceRoll={this.clearDiceRoll}
                                 ></RollResults>} 
       </div>
     );

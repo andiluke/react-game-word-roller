@@ -18,6 +18,7 @@ const ShowResults = function (props) {
             console.log('-1');
             props.changeScore(-1);
         }
+        props.clearDiceRoll();
     };
 
     const handleNoClick = () => {
@@ -31,6 +32,7 @@ const ShowResults = function (props) {
             console.log('-1');
             props.changeScore(-1);
         }
+        props.clearDiceRoll();
     };
 
 

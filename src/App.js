@@ -22,6 +22,7 @@ class App extends Component {
     };
     this.setDieResult = this.setDieResult.bind(this);
     this.setUserName = this.setUserName.bind(this);
+    this.changeScore = this.changeScore.bind(this);
   }
 
   setDieResult = (index, result) => {
@@ -39,13 +40,26 @@ class App extends Component {
     });
   };
 
+  changeScore = (changeBy) => {
+    console.log('changeScore by: ', changeBy);
+    this.setState((prevState) => {
+      return {
+        score: prevState.score + changeBy
+      } 
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <Header />
         <Welcome setUserName={this.setUserName} username={this.state.username} score={this.state.score}/>
         {this.state.username && <LetterDice dice={this.state.dice} setDieResult={this.setDieResult} results={this.state.results}></LetterDice>}
-        {this.state.username && <RollResults results={this.state.results} howManyDice={this.state.dice.length}></RollResults>} 
+        {this.state.username && <RollResults 
+                                  results={this.state.results} 
+                                  howManyDice={this.state.dice.length}
+                                  changeScore={this.changeScore}
+                                ></RollResults>} 
       </div>
     );
   }

@@ -31,7 +31,7 @@ class Dictionary {
       'mat', 'mad', 'maw', 'man', 'map',
       'met', 'men',
       'mit', 
-      'mob', 'mow', 'mop',
+      'mob', 'mow', 'mop', 'mom',
       'mud', 
       'nab', 'nap',
       'net', 'new', 

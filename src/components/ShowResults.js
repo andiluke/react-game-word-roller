@@ -1,26 +1,54 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Dictionary from '../lib/Dictionary';
 
+const dictionary = new Dictionary();
 
 
+const ShowResults = function (props) {
 
-class ShowResults extends Component {
-    render() {
-        return (
-            <div className="roll_results">
-                <div className="result_maybe_word_images">
-                {this.props.results.map((letter, index) => (
-                    <img src={'images/letters/' + letter + '.png'} alt={letter} key={index} />
-                ))}
-                </div>
-                <div className="roll_results_header">Is it a word?</div>
-                <div className="roll_results_buttons_wrap">
-                    <button className="roll_result_button">Yes</button>
-                    <button className="roll_result_button">No</button>
-                </div>
+
+    const handleYesClick = () => {
+        console.log('yes: ', props.results.join(''));
+        if (dictionary.isWord(props.results.join(''))){
+            // increase score
+            console.log('+1');
+            props.changeScore(1);
+        } else {
+            // decrease score
+            console.log('-1');
+            props.changeScore(-1);
+        }
+    };
+
+    const handleNoClick = () => {
+        console.log('no: ', props.results.join(''));
+        if (!dictionary.isWord(props.results.join(''))){
+            // increase score
+            console.log('+1');
+            props.changeScore(1);
+        } else {
+            // decrease score
+            console.log('-1');
+            props.changeScore(-1);
+        }
+    };
+
+
+    return (
+        <div className="roll_results">
+            <div className="result_maybe_word_images">
+            {props.results.map((letter, index) => (
+                <img src={'images/letters/' + letter + '.png'} alt={letter} key={index} />
+            ))}
             </div>
-        );
-    }
+            <div className="roll_results_header">Is it a word?</div>
+            <div className="roll_results_buttons_wrap">
+                <button className="roll_result_button" onClick={handleYesClick}>Yes</button>
+                <button className="roll_result_button" onClick={handleNoClick}>No</button>
+            </div>
+        </div>
+    );
+
 }
 
 export default ShowResults;

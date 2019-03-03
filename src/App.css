@@ -32,6 +32,11 @@
   padding-top: .5em;
 }
 
+.letter_die_image {
+  max-width: 100%;
+  height: auto;
+}
+
 .letter_die_initial {
   font-size: 2rem;
   cursor: pointer;
@@ -55,6 +60,7 @@
 
 .result_maybe_word_images img {
   max-width: 150px;
+  max-height: 250px;
   height: auto;
 }
 

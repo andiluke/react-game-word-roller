@@ -102,4 +102,13 @@ h2 {
   padding: 1em;
   background-color: #DF18CE;
   color: white;
+  transition: background-color .5s;
+}
+
+.score_increased {
+  background-color:#10C973;
+}
+
+.score_decreased {
+  background-color: black;
 }

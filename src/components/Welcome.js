@@ -1,28 +1,58 @@
-import React from 'react';
+import React, {Component} from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
 
-  const Welcome = (props) => {
-    const handleBtnClick = () => {
+  class Welcome extends React.Component {
+      render() {
+        if (this.props.username) {
+            return (
+                <ReactCSSTransitionGroup
+                transitionName="example"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}>
+      
+                <this.DisplayInfo username={this.props.username} score={this.props.score} key="welcome" />
+              </ReactCSSTransitionGroup>
+              );
+        } else {
+            return <this.EnterName />;
+        }
+      }
+
+      componentDidUpdate(prevProps, prevState, snapshot) {
+          console.log('componentDidUpdate');
+          console.log(prevProps);
+          console.log(this.props);
+          
+          const el = document.getElementsByClassName('display_info_wrap')[0];
+          // score increaese, happy dance
+          el.classList.remove('score_decreased', 'score_increased');
+          if (prevProps.score < this.props.score) {
+              console.log('score increased!');
+              el.classList.add('score_increased');
+          } else if (prevProps.score > this.props.score) {
+              console.log('score decreased!');
+              el.classList.add('score_decreased');
+          }
+      }
+
+    handleBtnClick = () => {
         let username = document.getElementById('welcome_username').value;
-        props.setUserName(username);
+        this.props.setUserName(username);
     }
 
-    const EnterName = (props) => (
+    EnterName = (props) => (
         <div className="welcome">
             <h2>Hello! What is your name?</h2>
-            <input id="welcome_username" data-lpignore="true" className="input_name"/> <button onClick={handleBtnClick} className="name_btn">Go</button>
+            <input id="welcome_username" data-lpignore="true" className="input_name"/> <button onClick={this.handleBtnClick} className="name_btn">Go</button>
         </div>
     );
 
-    const DisplayInfo = (props) => (
+    DisplayInfo = (props) => (
         <div className="display_info_wrap">
-            Hi {props.username}! Your score is: {props.score}
+            {props.username}'s score: {props.score}
         </div>
     );
-
-    if (props.username) {
-        return <DisplayInfo username={props.username} score={props.score}/>;
-    } else {
-        return <EnterName />;
-    }
+    
   }
+
   export default Welcome;

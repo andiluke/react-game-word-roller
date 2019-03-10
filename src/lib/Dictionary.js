@@ -18,7 +18,7 @@ class Dictionary {
       'dab', 'dad', 'dam', 
       'den',
       'did', 'dim', 'din', 'dip',
-      'dot', 'don',
+      'dot',
       'dub', 'dud',
       'cat', 'cab', 'cad', 'can', 'cap',
       'cot', 'cob', 'cow', 'cop',

@@ -5,13 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
       render() {
         if (this.props.username) {
             return (
-                <ReactCSSTransitionGroup
-                transitionName="example"
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={300}>
-      
                 <this.DisplayInfo username={this.props.username} score={this.props.score} key="welcome" />
-              </ReactCSSTransitionGroup>
               );
         } else {
             return <this.EnterName />;
@@ -41,10 +35,10 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
     }
 
     EnterName = (props) => (
-        <div className="welcome">
+        <form className="welcome" onSubmit={this.handleBtnClick}>
             <h2>Hello! What is your name?</h2>
-            <input id="welcome_username" data-lpignore="true" className="input_name"/> <button onClick={this.handleBtnClick} className="name_btn">Go</button>
-        </div>
+            <input id="welcome_username" data-lpignore="true" className="input_name"/> <button className="name_btn">Go</button>
+        </form>
     );
 
     DisplayInfo = (props) => (
